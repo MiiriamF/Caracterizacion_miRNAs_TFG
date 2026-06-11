@@ -47,7 +47,6 @@ def alineamiento(nombre_json, resultados_json):
                                         if distinta[mirna] == {}:
                                             del distinta[mirna]
 
-    #añadir número de cambios por miRNA
         for mir,inf in distinta.items():
                 res_json[mir] = {}
                 for pos,esp in inf.items():

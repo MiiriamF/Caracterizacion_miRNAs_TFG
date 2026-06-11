@@ -18,7 +18,6 @@ def interpretacion(nombre_json, resultados_json, nodos_json):
             for mir,inf in resultado.items():
                 nodos[mir] = {}
                 for pos,esp in inf.items():
-                    #nuevo_arbol = copy.deepcopy(tree)
                     cambios = {}
                     nodos[mir][pos] = {}
                     for gcf, tipo in esp.items():
@@ -29,18 +28,6 @@ def interpretacion(nombre_json, resultados_json, nodos_json):
                         nodo_comun = tree.common_ancestor(cambios[k])
                         nodos[mir][pos][k] = [nodo_comun.name,len(cambios[k])]
 
-                        """
-                        if k =="Delecion":
-                            nodo_comun.color = "red"
-                        elif k =="Insercion":
-                            nodo_comun.color = "green"
-                        elif "Sustitucion" in k:
-                            nodo_comun.color = "blue"
-                    for hoja in nuevo_arbol.get_terminals():
-                        hoja.name = rutas[hoja.name]["especie"]
-
-                    Phylo.write(nuevo_arbol, f"{mir}-{pos}.xml", "phyloxml")
-                    """
     with open(nombre_json, "w") as f:
         json.dump(rutas, f, indent=4)
 

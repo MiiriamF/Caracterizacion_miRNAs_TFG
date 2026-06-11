@@ -7,26 +7,6 @@ def resultados(nodos_json, conteo_json, clean_json):
         nodos_resultado = {}
         with open(conteo_json, "r") as f:
             conteo = json.load(f)
-
-            """
-            for mir,inf in nodos.items():
-                nodos_resultado[mir] = {}
-                for tipo,inf_2 in inf.items():
-                    nodos_resultado[mir][tipo] = {}
-                    for motivo,inf_3 in inf_2.items():
-                        nodos_resultado[mir][tipo][motivo] = {}
-                        if tipo == "motifs" or tipo == "loop_motifs":
-                            for status,inf_4 in inf_3.items():
-                                if inf_4[1] > 1:
-                                    nodos_resultado[mir][tipo][motivo][status] = [inf_4[0], inf_4[1]/conteo["mirnas_por_especies"][mir][inf_4[0]]]
-                                elif inf_4[1] == 1:
-                                    nodos_resultado[mir][tipo][motivo][status] = [inf_4[0]]
-                        elif tipo == "export_3p" or tipo == "export_5p":
-                            if inf_3[1] > 1:
-                                nodos_resultado[mir][tipo][motivo] = [inf_3[0], inf_3[1]/conteo["mirnas_por_especies"][mir][inf_3[0]]]
-                            elif inf_3[1] == 1:
-                                nodos_resultado[mir][tipo][motivo] = [inf_3[0]]
-            """
             for mir,inf in nodos.items():
                 nodos_resultado[mir] = {}
                 for tipo,inf_2 in inf.items():

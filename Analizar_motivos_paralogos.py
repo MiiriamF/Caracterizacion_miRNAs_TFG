@@ -103,17 +103,7 @@ def interpretacion(nombre_json, nodos_json, conteo_json, conteo_especies_json, p
                     nodos[mirna_familia]["export_3p"] = []
                     cambios[mirna_familia]["export_3p"] = []
                 cambios[mirna_familia]["export_3p"].append(e)
-                """
-                if "export_3p" not in nodos[mirna_familia].keys():
-                    nodos[mirna_familia]["export_3p"] = {}
-                    cambios[mirna_familia]["export_3p"] = {}
-                motivo = inf_2[0]
-                if motivo not in nodos[mirna_familia]["export_3p"].keys():
-                        nodos[mirna_familia]["export_3p"][motivo] = []
-                        cambios[mirna_familia]["export_3p"][motivo] = []
-                if e not in cambios[mirna_familia]["export_3p"][motivo]:
-                    cambios[mirna_familia]["export_3p"][motivo].append(e)
-                """
+                
             #Estudio de los motivos export_5p
             for mirna, status in rutas[e]["export_5p"].items():
                 if mirna.count("_") >= 1:
@@ -135,17 +125,7 @@ def interpretacion(nombre_json, nodos_json, conteo_json, conteo_especies_json, p
                     nodos[mirna_familia]["export_5p"] = []
                     cambios[mirna_familia]["export_5p"] = []
                 cambios[mirna_familia]["export_5p"].append(e)
-                """
-                if "export_5p" not in nodos[mirna_familia].keys():
-                    nodos[mirna_familia]["export_5p"] = {}
-                    cambios[mirna_familia]["export_5p"] = {}
-                motivo = inf_2[0]
-                if motivo not in nodos[mirna_familia]["export_5p"].keys():
-                        nodos[mirna_familia]["export_5p"][motivo] = []
-                        cambios[mirna_familia]["export_5p"][motivo] = []
-                if e not in cambios[mirna_familia]["export_5p"][motivo]:
-                    cambios[mirna_familia]["export_5p"][motivo].append(e)
-                """
+                
             #Estudio de los motivos loop_motifs
             for mirna, inf_2 in rutas[e]["loop_motifs"].items():
                 if mirna.count("_") >= 1:
@@ -298,32 +278,6 @@ def interpretacion(nombre_json, nodos_json, conteo_json, conteo_especies_json, p
                                             if nivel not in conteo["mirnas_por_especies"][mirna].keys():
                                                 conteo["mirnas_por_especies"][mirna][nivel] = 0
                                             conteo["mirnas_por_especies"][mirna][nivel] += 1
-                        """
-                        elif tipos == "export_3p":
-                            nodo_comun = tree.common_ancestor(inf_3)
-                            nodos[mirna]["export_3p"][motivo] = [nodo_comun.name,len(inf_3)]
-                            for i in inf_3:
-                                if i not in list:
-                                    list.append(i)
-                                    sum += 1
-                                    niveles = [n.strip() for n in rutas[i]["linaje"].split(";") if n.strip()]
-                                    for nivel in niveles:
-                                        if nivel not in conteo["mirnas_por_especies"][mirna].keys():
-                                            conteo["mirnas_por_especies"][mirna][nivel] = 0
-                                        conteo["mirnas_por_especies"][mirna][nivel] += 1
-                        elif tipos == "export_5p":
-                            nodo_comun = tree.common_ancestor(inf_3)
-                            nodos[mirna]["export_5p"][motivo] = [nodo_comun.name,len(inf_3)]
-                            for i in inf_3:
-                                if i not in list:
-                                    list.append(i)
-                                    sum += 1
-                                    niveles = [n.strip() for n in rutas[i]["linaje"].split(";") if n.strip()]
-                                    for nivel in niveles:
-                                        if nivel not in conteo["mirnas_por_especies"][mirna].keys():
-                                            conteo["mirnas_por_especies"][mirna][nivel] = 0
-                                        conteo["mirnas_por_especies"][mirna][nivel] += 1
-                        """
             if mirna not in conteo["mirnas"].keys():
                 conteo["mirnas"][mirna] = sum
                 conteo_esp[mirna] = list
