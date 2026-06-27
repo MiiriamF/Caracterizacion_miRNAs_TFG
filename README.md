@@ -1,5 +1,5 @@
 # Caracterización miRNAs
-Programas para el análisis de los motivos, número de copias y secuencia de los miRNAs predichos con MirMachine a partir del archivo de salida mirna.json obtenido al ejecutar la herramienta anot de srnatoolbox.
+Programas para el análisis de los motivos, número de copias y secuencia de los miRNAs predichos con MirMachine a partir del archivo de salida mirna.json obtenido al ejecutar la herramienta anot de srnatoolbox. Se ha ejecutado en un servidor remoto de Linux y con un entorno virtual conda.
 
 ## Análisis motivos y parálogos: 
 - Extraccion_mirna_json.py: extracción del estado de cada motivo, así como de la secuencia de todos los miRNAs predichos en el mirna.json para las especies deseadas. Requiere 4 parámatros.
